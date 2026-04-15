@@ -77,31 +77,63 @@ P1/P2 (キャラ性強い自然言語) は分岐が多く受理率が低い:
 - [e6_prefill_heatmap.png](results/summary/e6_prefill_heatmap.png) — prefill スループット倍率ヒートマップ
 - `results/summary/e6_turns_<model>_<persona>.png` — ターン単位の所要時間推移
 
+## LLM の返答を読む
+
+18 個 `(model × persona)` の全ターンを `results/summary/transcripts/` に markdown で整形済み。
+各ファイル先頭に **C0/C1/C2 3 条件の 20 ターン合計 timing 比較**、
+各ターンに **3 条件並列の elapsed / prefill / gen / spec 受理率テーブル** +
+User 質問 + Assistant 返答 (引用) を載せている。
+temp=0 seed=42 の決定論セッティングなので返答テキストは 3 条件で同一、
+違うのは速度だけ ← それこそが実験の本題。
+
+例: [`Qwen2.5-72B × P0`](results/summary/transcripts/M72B_P0.md) は
+20 ターン合計 8591s → 3339s → 1961s (**4.38x**) が 1 ファイルで一望できる。
+
+| model | P0 | P1 | P2 |
+|---|---|---|---|
+| Qwen2.5-3B  | [M3B_P0](results/summary/transcripts/M3B_P0.md) | [M3B_P1](results/summary/transcripts/M3B_P1.md) | [M3B_P2](results/summary/transcripts/M3B_P2.md) |
+| Qwen2.5-7B  | [M7B_P0](results/summary/transcripts/M7B_P0.md) | [M7B_P1](results/summary/transcripts/M7B_P1.md) | [M7B_P2](results/summary/transcripts/M7B_P2.md) |
+| Qwen2.5-14B | [M14B_P0](results/summary/transcripts/M14B_P0.md) | [M14B_P1](results/summary/transcripts/M14B_P1.md) | [M14B_P2](results/summary/transcripts/M14B_P2.md) |
+| Qwen3-30B-A3B | [M30A3_P0](results/summary/transcripts/M30A3_P0.md) | [M30A3_P1](results/summary/transcripts/M30A3_P1.md) | [M30A3_P2](results/summary/transcripts/M30A3_P2.md) |
+| Qwen2.5-32B | [M32B_P0](results/summary/transcripts/M32B_P0.md) | [M32B_P1](results/summary/transcripts/M32B_P1.md) | [M32B_P2](results/summary/transcripts/M32B_P2.md) |
+| Qwen2.5-72B | [M72B_P0](results/summary/transcripts/M72B_P0.md) | [M72B_P1](results/summary/transcripts/M72B_P1.md) | [M72B_P2](results/summary/transcripts/M72B_P2.md) |
+
 ## レポジトリ構成
 
 ```
 scripts/
   bench_conv.py          # ベンチ本体 (モデル起動 / 20 ターン回し / CSV 追記)
   analyze.py             # CSV/JSONL → summary.md + PNG 群
+  dump_transcripts.py    # conv_trials.jsonl → 3 条件比較つき markdown
 results/
   raw/
-    conv.csv             # ラン単位集計 (54+ 行)
-    conv_trials.jsonl    # ターン単位 (1080+ 行, 全文 + timings)
+    conv.csv             # ラン単位集計 (94 行: 失敗再走の履歴込み、stable=true のみが確定値)
+    conv_trials.jsonl    # ターン単位 (1249 行 → dedup 後 1080, 全文 + timings)
     prompts/             # ペルソナ system prompt と質問セット (P0/P1/P2)
-    configs/             # 各ランの起動コマンドと設定 JSON
-    logs/                # llama-server の stdout+stderr
-    responses/<case>/    # /v1/chat/completions の生レスポンス 20 個
+    configs/configs/     # 各ランの起動コマンドと設定 JSON (54 本)
+    logs/logs/           # llama-server の stdout+stderr (54 本)
+    responses/<case>/    # /v1/chat/completions の生レスポンス 20 個 × 54 ケース = 1080
   summary/
     summary.md           # 集計結果
-    e6_*.png             # チャート
+    e6_*.png             # チャート 23 枚
+    transcripts/         # 18 個の (model × persona) markdown (3 条件比較つき)
 ```
+
+### 生データの読み方
+
+- **`conv.csv`**: 同じ `case_id` が複数行ある場合は失敗→再走の履歴。`stable=true` の行だけが最終確定値 (54 行)。
+- **`conv_trials.jsonl`**: 同様に `(case_id, turn)` の後勝ちで dedup する。`dump_transcripts.py` がそれをやっている。
+- **`responses/<case>/turn_NN.json`**: llama.cpp の `timings` フィールドに prefill/gen ms、spec decoding なら `draft_n` / `draft_n_accepted` も入る。
+- **`logs/logs/<case>.log`**: `using device Vulkan0 (AMD Radeon 780M Graphics)` と出ているので iGPU 推論である事が確認できる。
 
 ## 再現方法
 
-```
-# 前提: C:\llm-exp\ 配下に llama.cpp と models/ を配置
-python scripts/bench_conv.py               # 54 ランを resume-safe に実行
-python scripts/analyze.py                   # 集計・可視化
+```bash
+# 前提: C:\llm-exp\ 配下に llama.cpp (b8672+) と models/ (Q4_K_M gguf 6 種 + draft 0.5B) を配置
+pip install -r requirements.txt             # matplotlib のみ (bench は stdlib)
+python scripts/bench_conv.py                 # 54 ランを resume-safe に実行
+python scripts/analyze.py                    # 集計・可視化
+python scripts/dump_transcripts.py           # 3 条件比較つきトランスクリプト生成
 ```
 
 `--only M3B M7B` でモデルを絞れる。`conv.csv` に `stable=true` 行があるケースはスキップされるので

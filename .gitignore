@@ -1,5 +1,19 @@
 __pycache__/
 *.pyc
+*.pyo
 *.bak
+*.tmp
 results/raw/conv.csv.bak
 results/raw/conv_trials.jsonl.bak
+
+# venv
+.venv/
+venv/
+env/
+
+# editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
