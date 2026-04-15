@@ -4,7 +4,7 @@
 - 合計トークン: prompt=46325, gen=3676
 - 平均 gen: 10.9 tok/s
 
-## Turn 1  _(elapsed 11.5s / gen 11.1 tok/s)_
+## Turn 1  _(elapsed 11.5s / gen 101 tok in 9.1s @ 11.1 tok/s)_
 
 **User**: Pythonでfizzbuzzを1から15まで書いて
 
@@ -23,7 +23,7 @@
 > ```
 > このコードを実行すると、1から15までの数についてFizzBuzz問題の解答が表示されます。
 
-## Turn 2  _(elapsed 16.1s / gen 11.1 tok/s)_
+## Turn 2  _(elapsed 16.1s / gen 144 tok in 13.0s @ 11.1 tok/s)_
 
 **User**: それをGoに書き直して
 
@@ -53,7 +53,7 @@
 >
 > このプログラムを実行すると、1から15までの数についてFizzBuzz問題の解答が表示されます。
 
-## Turn 3  _(elapsed 15.9s / gen 11.1 tok/s)_
+## Turn 3  _(elapsed 15.9s / gen 132 tok in 11.9s @ 11.1 tok/s)_
 
 **User**: 次はRustでお願い
 
@@ -79,7 +79,7 @@
 >
 > このプログラムを実行すると、1から15までの数についてFizzBuzz問題の解答が表示されます。
 
-## Turn 4  _(elapsed 54.0s / gen 11.0 tok/s)_
+## Turn 4  _(elapsed 54.0s / gen 537 tok in 49.0s @ 11.0 tok/s)_
 
 **User**: この3言語で実行速度はどう違う?
 
@@ -156,7 +156,7 @@
 >
 > これらのコードを実行して、それぞれの言語での実行時間を測定します。実行速度の差は通常、微妙なものですが、Rustが一般的に他の言語よりも高速であることを示す結果が得られることが多いです。Pythonはインタプリタ型言語で、GoとRustはコンパイル型言語であるため、Rustが最も高速である可能性があります。
 
-## Turn 5  _(elapsed 83.3s / gen 10.9 tok/s)_
+## Turn 5  _(elapsed 83.3s / gen 814 tok in 74.9s @ 10.9 tok/s)_
 
 **User**: 可読性の観点ではどれが好み?
 
@@ -258,7 +258,7 @@
 >
 > 最終的には、開発者の好みやプロジェクトの要件によって最適な選択が変わります。
 
-## Turn 6  _(elapsed 30.8s / gen 10.8 tok/s)_
+## Turn 6  _(elapsed 30.8s / gen 188 tok in 17.3s @ 10.8 tok/s)_
 
 **User**: 話題を変えるけど、東京の有名な観光名所を3つ挙げて
 
@@ -277,7 +277,7 @@
 >
 > これらの場所は東京を代表する観光スポットで、それぞれ異なる魅力を持っています。
 
-## Turn 7  _(elapsed 35.2s / gen 10.8 tok/s)_
+## Turn 7  _(elapsed 35.2s / gen 221 tok in 20.4s @ 10.8 tok/s)_
 
 **User**: その中で一番歴史が古いのはどれ?
 
@@ -297,7 +297,7 @@
 >
 > したがって、最も歴史が古いのは**浅草寺**です。
 
-## Turn 8  _(elapsed 27.1s / gen 10.8 tok/s)_
+## Turn 8  _(elapsed 27.1s / gen 116 tok in 10.7s @ 10.8 tok/s)_
 
 **User**: 江戸時代は西暦で何年から何年まで?
 
@@ -310,7 +310,7 @@
 >
 > この期間は日本の歴史上非常に重要な時代であり、現代の日本の基礎を築いた重要な時期です。
 
-## Turn 9  _(elapsed 39.4s / gen 10.8 tok/s)_
+## Turn 9  _(elapsed 39.4s / gen 238 tok in 22.1s @ 10.8 tok/s)_
 
 **User**: 江戸時代の主な将軍を3人挙げて
 
@@ -329,7 +329,7 @@
 >
 > これらの将軍は江戸時代の重要な時期を代表し、幕府の政治や文化発展に大きな影響を与えました。
 
-## Turn 10  _(elapsed 24.8s / gen 10.9 tok/s)_
+## Turn 10  _(elapsed 24.8s / gen 64 tok in 5.9s @ 10.9 tok/s)_
 
 **User**: 徳川家康について2行で説明して
 
@@ -337,7 +337,7 @@
 
 > 徳川家康は1603年に江戸幕府を建立し、江戸時代の始まりを象徴する重要な将軍です。彼の統治下で日本の中央集権化が進み、幕府の基礎が築かれました。
 
-## Turn 11  _(elapsed 20.6s / gen 11.6 tok/s)_
+## Turn 11  _(elapsed 20.6s / gen 12 tok in 1.0s @ 11.6 tok/s)_
 
 **User**: 数学クイズ: 13 × 17 は?
 
@@ -345,7 +345,7 @@
 
 > 13 × 17 = 221
 
-## Turn 12  _(elapsed 20.7s / gen 11.7 tok/s)_
+## Turn 12  _(elapsed 20.7s / gen 12 tok in 1.0s @ 11.7 tok/s)_
 
 **User**: じゃあ17の二乗は?
 
@@ -353,7 +353,7 @@
 
 > 17の二乗は 289。
 
-## Turn 13  _(elapsed 25.7s / gen 10.9 tok/s)_
+## Turn 13  _(elapsed 25.7s / gen 62 tok in 5.7s @ 10.9 tok/s)_
 
 **User**: 素数を小さい順に5つ挙げて
 
@@ -369,7 +369,7 @@
 >
 > これらの数は、1と自身以外の数で割り切れない整数です。
 
-## Turn 14  _(elapsed 22.4s / gen 11.2 tok/s)_
+## Turn 14  _(elapsed 22.4s / gen 21 tok in 1.9s @ 11.2 tok/s)_
 
 **User**: 素数の定義を1行で
 
@@ -377,7 +377,7 @@
 
 > 素数は1と自身以外の数で割り切れない正の整数です。
 
-## Turn 15  _(elapsed 32.7s / gen 10.7 tok/s)_
+## Turn 15  _(elapsed 32.7s / gen 127 tok in 11.8s @ 10.7 tok/s)_
 
 **User**: プログラミングに戻るけど、REST APIとGraphQLの違いを簡潔に
 
@@ -390,7 +390,7 @@
 >
 > 主な違いは、GraphQLがより柔軟で効率的なデータ取得を可能にする点です。
 
-## Turn 16  _(elapsed 32.7s / gen 10.7 tok/s)_
+## Turn 16  _(elapsed 32.7s / gen 117 tok in 10.9s @ 10.7 tok/s)_
 
 **User**: GraphQLのデメリットを2つ
 
@@ -401,7 +401,7 @@
 > 1. **パフォーマンスの問題**: クライアントが不要なデータも要求できるため、サーバーがより多くのデータを処理しなければならない。これにより、パフォーマンスが低下する可能性がある。
 > 2. **学習曲線**: GraphQLの構文と機能は比較的複雑で、開発者に学習曲線が高くなる。特に初学者にとっては設定と使用が難しい場合がある。
 
-## Turn 17  _(elapsed 66.2s / gen 10.6 tok/s)_
+## Turn 17  _(elapsed 66.2s / gen 464 tok in 43.6s @ 10.6 tok/s)_
 
 **User**: N+1問題とは何?
 
@@ -445,7 +445,7 @@
 >
 > 这样可以减少查询次数，提高性能。
 
-## Turn 18  _(elapsed 42.0s / gen 10.6 tok/s)_
+## Turn 18  _(elapsed 42.0s / gen 173 tok in 16.3s @ 10.6 tok/s)_
 
 **User**: その解決策を簡潔に
 
@@ -479,7 +479,7 @@
 >
 > 通过这些方法，可以显著减少不必要的查询次数，提高应用的性能。
 
-## Turn 19  _(elapsed 36.6s / gen 10.7 tok/s)_
+## Turn 19  _(elapsed 36.6s / gen 101 tok in 9.5s @ 10.7 tok/s)_
 
 **User**: 今までの会話で話題になったプログラミング言語を全部挙げて
 
@@ -496,7 +496,7 @@
 >
 > 这些语言在我们的讨论中都出现了。如果有遗漏或需要更多信息，请告诉我！
 
-## Turn 20  _(elapsed 31.0s / gen 10.9 tok/s)_
+## Turn 20  _(elapsed 31.0s / gen 32 tok in 2.9s @ 10.9 tok/s)_
 
 **User**: じゃあ今までの会話を1行でまとめて
 

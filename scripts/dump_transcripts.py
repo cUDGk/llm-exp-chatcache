@@ -59,7 +59,12 @@ for case_id, rows in by_case.items():
     lines.append("")
 
     for r in rows:
-        lines.append(f"## Turn {r['turn']}  _(elapsed {r['elapsed_sec']:.1f}s / gen {r.get('gen_tps') or 0:.1f} tok/s)_")
+        gen_tok = r.get("gen_tokens") or 0
+        gen_sec = (r.get("predict_ms") or 0) / 1000.0
+        gen_tps = r.get("gen_tps") or 0
+        lines.append(
+            f"## Turn {r['turn']}  _(elapsed {r['elapsed_sec']:.1f}s / gen {gen_tok} tok in {gen_sec:.1f}s @ {gen_tps:.1f} tok/s)_"
+        )
         lines.append("")
         lines.append(f"**User**: {r['user']}")
         lines.append("")
