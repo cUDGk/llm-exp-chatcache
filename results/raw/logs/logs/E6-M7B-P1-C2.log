@@ -1,0 +1,776 @@
+load_backend: loaded Vulkan backend from C:\llm-exp\llama.cpp\ggml-vulkan.dll
+load_backend: loaded CPU backend from C:\llm-exp\llama.cpp\ggml-cpu-zen4.dll
+main: n_parallel is set to auto, using n_parallel = 4 and kv_unified = true
+build_info: b8672-25eec6f32
+system_info: n_threads = 16 (n_threads_batch = 16) / 16 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+Running without SSL
+init: using 15 threads for HTTP server
+start: binding port with default address family
+main: loading model
+srv    load_model: loading model 'C:\llm-exp\models\Qwen2.5-7B-Instruct-Q4_K_M.gguf'
+common_init_result: fitting params to device memory, for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on
+llama_params_fit_impl: projected to use 4920 MiB of device memory vs. 31996 MiB of free device memory
+llama_params_fit_impl: will leave 27075 >= 1024 MiB of free device memory, no changes needed
+llama_params_fit: successfully fit params to free device memory
+llama_params_fit: fitting params to free memory took 0.26 seconds
+llama_model_load_from_file_impl: using device Vulkan0 (AMD Radeon 780M Graphics) (unknown id) - 31998 MiB free
+llama_model_loader: loaded meta data with 38 key-value pairs and 339 tensors from C:\llm-exp\models\Qwen2.5-7B-Instruct-Q4_K_M.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = qwen2
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Qwen2.5 7B Instruct
+llama_model_loader: - kv   3:                           general.finetune str              = Instruct
+llama_model_loader: - kv   4:                           general.basename str              = Qwen2.5
+llama_model_loader: - kv   5:                         general.size_label str              = 7B
+llama_model_loader: - kv   6:                            general.license str              = apache-2.0
+llama_model_loader: - kv   7:                       general.license.link str              = https://huggingface.co/Qwen/Qwen2.5-7...
+llama_model_loader: - kv   8:                   general.base_model.count u32              = 1
+llama_model_loader: - kv   9:                  general.base_model.0.name str              = Qwen2.5 7B
+llama_model_loader: - kv  10:          general.base_model.0.organization str              = Qwen
+llama_model_loader: - kv  11:              general.base_model.0.repo_url str              = https://huggingface.co/Qwen/Qwen2.5-7B
+llama_model_loader: - kv  12:                               general.tags arr[str,2]       = ["chat", "text-generation"]
+llama_model_loader: - kv  13:                          general.languages arr[str,1]       = ["en"]
+llama_model_loader: - kv  14:                          qwen2.block_count u32              = 28
+llama_model_loader: - kv  15:                       qwen2.context_length u32              = 32768
+llama_model_loader: - kv  16:                     qwen2.embedding_length u32              = 3584
+llama_model_loader: - kv  17:                  qwen2.feed_forward_length u32              = 18944
+llama_model_loader: - kv  18:                 qwen2.attention.head_count u32              = 28
+llama_model_loader: - kv  19:              qwen2.attention.head_count_kv u32              = 4
+llama_model_loader: - kv  20:                       qwen2.rope.freq_base f32              = 1000000.000000
+llama_model_loader: - kv  21:     qwen2.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv  22:                          general.file_type u32              = 15
+llama_model_loader: - kv  23:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  24:                         tokenizer.ggml.pre str              = qwen2
+llama_model_loader: - kv  25:                      tokenizer.ggml.tokens arr[str,152064]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  26:                  tokenizer.ggml.token_type arr[i32,152064]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  27:                      tokenizer.ggml.merges arr[str,151387]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+llama_model_loader: - kv  28:                tokenizer.ggml.eos_token_id u32              = 151645
+llama_model_loader: - kv  29:            tokenizer.ggml.padding_token_id u32              = 151643
+llama_model_loader: - kv  30:                tokenizer.ggml.bos_token_id u32              = 151643
+llama_model_loader: - kv  31:               tokenizer.ggml.add_bos_token bool             = false
+llama_model_loader: - kv  32:                    tokenizer.chat_template str              = {%- if tools %}\n    {{- '<|im_start|>...
+llama_model_loader: - kv  33:               general.quantization_version u32              = 2
+llama_model_loader: - kv  34:                      quantize.imatrix.file str              = /models_out/Qwen2.5-7B-Instruct-GGUF/...
+llama_model_loader: - kv  35:                   quantize.imatrix.dataset str              = /training_dir/calibration_datav3.txt
+llama_model_loader: - kv  36:             quantize.imatrix.entries_count i32              = 196
+llama_model_loader: - kv  37:              quantize.imatrix.chunks_count i32              = 128
+llama_model_loader: - type  f32:  141 tensors
+llama_model_loader: - type q4_K:  169 tensors
+llama_model_loader: - type q6_K:   29 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_K - Medium
+print_info: file size   = 4.36 GiB (4.91 BPW) 
+load: 0 unused tokens
+load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+load: printing all EOG tokens:
+load:   - 128247 ('</s>')
+load:   - 151643 ('<|endoftext|>')
+load:   - 151645 ('<|im_end|>')
+load:   - 151662 ('<|fim_pad|>')
+load:   - 151663 ('<|repo_name|>')
+load:   - 151664 ('<|file_sep|>')
+load: special tokens cache size = 23
+load: token to piece cache size = 0.9310 MB
+print_info: arch                  = qwen2
+print_info: vocab_only            = 0
+print_info: no_alloc              = 0
+print_info: n_ctx_train           = 32768
+print_info: n_embd                = 3584
+print_info: n_embd_inp            = 3584
+print_info: n_layer               = 28
+print_info: n_head                = 28
+print_info: n_head_kv             = 4
+print_info: n_rot                 = 128
+print_info: n_swa                 = 0
+print_info: is_swa_any            = 0
+print_info: n_embd_head_k         = 128
+print_info: n_embd_head_v         = 128
+print_info: n_gqa                 = 7
+print_info: n_embd_k_gqa          = 512
+print_info: n_embd_v_gqa          = 512
+print_info: f_norm_eps            = 0.0e+00
+print_info: f_norm_rms_eps        = 1.0e-06
+print_info: f_clamp_kqv           = 0.0e+00
+print_info: f_max_alibi_bias      = 0.0e+00
+print_info: f_logit_scale         = 0.0e+00
+print_info: f_attn_scale          = 0.0e+00
+print_info: n_ff                  = 18944
+print_info: n_expert              = 0
+print_info: n_expert_used         = 0
+print_info: n_expert_groups       = 0
+print_info: n_group_used          = 0
+print_info: causal attn           = 1
+print_info: pooling type          = -1
+print_info: rope type             = 2
+print_info: rope scaling          = linear
+print_info: freq_base_train       = 1000000.0
+print_info: freq_scale_train      = 1
+print_info: n_ctx_orig_yarn       = 32768
+print_info: rope_yarn_log_mul     = 0.0000
+print_info: rope_finetuned        = unknown
+print_info: model type            = 7B
+print_info: model params          = 7.62 B
+print_info: general.name          = Qwen2.5 7B Instruct
+print_info: vocab type            = BPE
+print_info: n_vocab               = 152064
+print_info: n_merges              = 151387
+print_info: BOS token             = 151643 '<|endoftext|>'
+print_info: EOS token             = 151645 '<|im_end|>'
+print_info: EOT token             = 151645 '<|im_end|>'
+print_info: PAD token             = 151643 '<|endoftext|>'
+print_info: LF token              = 198 'Ċ'
+print_info: FIM PRE token         = 151659 '<|fim_prefix|>'
+print_info: FIM SUF token         = 151661 '<|fim_suffix|>'
+print_info: FIM MID token         = 151660 '<|fim_middle|>'
+print_info: FIM PAD token         = 151662 '<|fim_pad|>'
+print_info: FIM REP token         = 151663 '<|repo_name|>'
+print_info: FIM SEP token         = 151664 '<|file_sep|>'
+print_info: EOG token             = 128247 '</s>'
+print_info: EOG token             = 151643 '<|endoftext|>'
+print_info: EOG token             = 151645 '<|im_end|>'
+print_info: EOG token             = 151662 '<|fim_pad|>'
+print_info: EOG token             = 151663 '<|repo_name|>'
+print_info: EOG token             = 151664 '<|file_sep|>'
+print_info: max token length      = 256
+load_tensors: loading model tensors, this can take a while... (mmap = true, direct_io = false)
+load_tensors: offloading output layer to GPU
+load_tensors: offloading 27 repeating layers to GPU
+load_tensors: offloaded 29/29 layers to GPU
+load_tensors:   CPU_Mapped model buffer size =   292.36 MiB
+load_tensors:      Vulkan0 model buffer size =  4168.09 MiB
+...................................................................................
+common_init_result: added </s> logit bias = -inf
+common_init_result: added <|endoftext|> logit bias = -inf
+common_init_result: added <|im_end|> logit bias = -inf
+common_init_result: added <|fim_pad|> logit bias = -inf
+common_init_result: added <|repo_name|> logit bias = -inf
+common_init_result: added <|file_sep|> logit bias = -inf
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 4
+llama_context: n_ctx         = 8192
+llama_context: n_ctx_seq     = 8192
+llama_context: n_batch       = 2048
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = enabled
+llama_context: kv_unified    = true
+llama_context: freq_base     = 1000000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_seq (8192) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+llama_context: Vulkan_Host  output buffer size =     2.32 MiB
+llama_kv_cache:    Vulkan0 KV buffer size =   448.00 MiB
+llama_kv_cache: size =  448.00 MiB (  8192 cells,  28 layers,  4/1 seqs), K (f16):  224.00 MiB, V (f16):  224.00 MiB
+llama_kv_cache: attn_rot_k = 0
+llama_kv_cache: attn_rot_v = 0
+sched_reserve: reserving ...
+sched_reserve: resolving fused Gated Delta Net support:
+sched_reserve: fused Gated Delta Net (autoregressive) enabled
+sched_reserve: fused Gated Delta Net (chunked) enabled
+sched_reserve:    Vulkan0 compute buffer size =   304.00 MiB
+sched_reserve: Vulkan_Host compute buffer size =    30.01 MiB
+sched_reserve: graph nodes  = 959
+sched_reserve: graph splits = 2
+sched_reserve: reserve took 62.59 ms, sched copies = 1
+common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+srv    load_model: loading draft model 'C:\llm-exp\models\Qwen2.5-0.5B-Instruct-Q8_0.gguf'
+llama_model_load_from_file_impl: using device Vulkan0 (AMD Radeon 780M Graphics) (unknown id) - 26619 MiB free
+llama_model_loader: loaded meta data with 38 key-value pairs and 290 tensors from C:\llm-exp\models\Qwen2.5-0.5B-Instruct-Q8_0.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = qwen2
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Qwen2.5 0.5B Instruct
+llama_model_loader: - kv   3:                           general.finetune str              = Instruct
+llama_model_loader: - kv   4:                           general.basename str              = Qwen2.5
+llama_model_loader: - kv   5:                         general.size_label str              = 0.5B
+llama_model_loader: - kv   6:                            general.license str              = apache-2.0
+llama_model_loader: - kv   7:                       general.license.link str              = https://huggingface.co/Qwen/Qwen2.5-0...
+llama_model_loader: - kv   8:                   general.base_model.count u32              = 1
+llama_model_loader: - kv   9:                  general.base_model.0.name str              = Qwen2.5 0.5B
+llama_model_loader: - kv  10:          general.base_model.0.organization str              = Qwen
+llama_model_loader: - kv  11:              general.base_model.0.repo_url str              = https://huggingface.co/Qwen/Qwen2.5-0.5B
+llama_model_loader: - kv  12:                               general.tags arr[str,2]       = ["chat", "text-generation"]
+llama_model_loader: - kv  13:                          general.languages arr[str,1]       = ["en"]
+llama_model_loader: - kv  14:                          qwen2.block_count u32              = 24
+llama_model_loader: - kv  15:                       qwen2.context_length u32              = 32768
+llama_model_loader: - kv  16:                     qwen2.embedding_length u32              = 896
+llama_model_loader: - kv  17:                  qwen2.feed_forward_length u32              = 4864
+llama_model_loader: - kv  18:                 qwen2.attention.head_count u32              = 14
+llama_model_loader: - kv  19:              qwen2.attention.head_count_kv u32              = 2
+llama_model_loader: - kv  20:                       qwen2.rope.freq_base f32              = 1000000.000000
+llama_model_loader: - kv  21:     qwen2.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv  22:                          general.file_type u32              = 7
+llama_model_loader: - kv  23:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  24:                         tokenizer.ggml.pre str              = qwen2
+llama_model_loader: - kv  25:                      tokenizer.ggml.tokens arr[str,151936]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  26:                  tokenizer.ggml.token_type arr[i32,151936]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  27:                      tokenizer.ggml.merges arr[str,151387]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+llama_model_loader: - kv  28:                tokenizer.ggml.eos_token_id u32              = 151645
+llama_model_loader: - kv  29:            tokenizer.ggml.padding_token_id u32              = 151643
+llama_model_loader: - kv  30:                tokenizer.ggml.bos_token_id u32              = 151643
+llama_model_loader: - kv  31:               tokenizer.ggml.add_bos_token bool             = false
+llama_model_loader: - kv  32:                    tokenizer.chat_template str              = {%- if tools %}\n    {{- '<|im_start|>...
+llama_model_loader: - kv  33:               general.quantization_version u32              = 2
+llama_model_loader: - kv  34:                      quantize.imatrix.file str              = /models_out/Qwen2.5-0.5B-Instruct-GGU...
+llama_model_loader: - kv  35:                   quantize.imatrix.dataset str              = /training_dir/calibration_datav3.txt
+llama_model_loader: - kv  36:             quantize.imatrix.entries_count i32              = 168
+llama_model_loader: - kv  37:              quantize.imatrix.chunks_count i32              = 128
+llama_model_loader: - type  f32:  121 tensors
+llama_model_loader: - type q8_0:  169 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q8_0
+print_info: file size   = 500.79 MiB (8.50 BPW) 
+load: 0 unused tokens
+load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+load: printing all EOG tokens:
+load:   - 128247 ('</s>')
+load:   - 151643 ('<|endoftext|>')
+load:   - 151645 ('<|im_end|>')
+load:   - 151662 ('<|fim_pad|>')
+load:   - 151663 ('<|repo_name|>')
+load:   - 151664 ('<|file_sep|>')
+load: special tokens cache size = 23
+load: token to piece cache size = 0.9310 MB
+print_info: arch                  = qwen2
+print_info: vocab_only            = 0
+print_info: no_alloc              = 0
+print_info: n_ctx_train           = 32768
+print_info: n_embd                = 896
+print_info: n_embd_inp            = 896
+print_info: n_layer               = 24
+print_info: n_head                = 14
+print_info: n_head_kv             = 2
+print_info: n_rot                 = 64
+print_info: n_swa                 = 0
+print_info: is_swa_any            = 0
+print_info: n_embd_head_k         = 64
+print_info: n_embd_head_v         = 64
+print_info: n_gqa                 = 7
+print_info: n_embd_k_gqa          = 128
+print_info: n_embd_v_gqa          = 128
+print_info: f_norm_eps            = 0.0e+00
+print_info: f_norm_rms_eps        = 1.0e-06
+print_info: f_clamp_kqv           = 0.0e+00
+print_info: f_max_alibi_bias      = 0.0e+00
+print_info: f_logit_scale         = 0.0e+00
+print_info: f_attn_scale          = 0.0e+00
+print_info: n_ff                  = 4864
+print_info: n_expert              = 0
+print_info: n_expert_used         = 0
+print_info: n_expert_groups       = 0
+print_info: n_group_used          = 0
+print_info: causal attn           = 1
+print_info: pooling type          = -1
+print_info: rope type             = 2
+print_info: rope scaling          = linear
+print_info: freq_base_train       = 1000000.0
+print_info: freq_scale_train      = 1
+print_info: n_ctx_orig_yarn       = 32768
+print_info: rope_yarn_log_mul     = 0.0000
+print_info: rope_finetuned        = unknown
+print_info: model type            = 1B
+print_info: model params          = 494.03 M
+print_info: general.name          = Qwen2.5 0.5B Instruct
+print_info: vocab type            = BPE
+print_info: n_vocab               = 151936
+print_info: n_merges              = 151387
+print_info: BOS token             = 151643 '<|endoftext|>'
+print_info: EOS token             = 151645 '<|im_end|>'
+print_info: EOT token             = 151645 '<|im_end|>'
+print_info: PAD token             = 151643 '<|endoftext|>'
+print_info: LF token              = 198 'Ċ'
+print_info: FIM PRE token         = 151659 '<|fim_prefix|>'
+print_info: FIM SUF token         = 151661 '<|fim_suffix|>'
+print_info: FIM MID token         = 151660 '<|fim_middle|>'
+print_info: FIM PAD token         = 151662 '<|fim_pad|>'
+print_info: FIM REP token         = 151663 '<|repo_name|>'
+print_info: FIM SEP token         = 151664 '<|file_sep|>'
+print_info: EOG token             = 128247 '</s>'
+print_info: EOG token             = 151643 '<|endoftext|>'
+print_info: EOG token             = 151645 '<|im_end|>'
+print_info: EOG token             = 151662 '<|fim_pad|>'
+print_info: EOG token             = 151663 '<|repo_name|>'
+print_info: EOG token             = 151664 '<|file_sep|>'
+print_info: max token length      = 256
+load_tensors: loading model tensors, this can take a while... (mmap = true, direct_io = false)
+load_tensors: offloading output layer to GPU
+load_tensors: offloading 23 repeating layers to GPU
+load_tensors: offloaded 25/25 layers to GPU
+load_tensors:   CPU_Mapped model buffer size =   137.94 MiB
+load_tensors:      Vulkan0 model buffer size =   500.79 MiB
+...........................................................
+srv    load_model: initializing slots, n_slots = 4
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 1
+llama_context: n_ctx         = 8192
+llama_context: n_ctx_seq     = 8192
+llama_context: n_batch       = 8192
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = enabled
+llama_context: kv_unified    = true
+llama_context: freq_base     = 1000000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_seq (8192) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+llama_context: Vulkan_Host  output buffer size =     0.58 MiB
+llama_kv_cache:    Vulkan0 KV buffer size =    96.00 MiB
+llama_kv_cache: size =   96.00 MiB (  8192 cells,  24 layers,  1/1 seqs), K (f16):   48.00 MiB, V (f16):   48.00 MiB
+llama_kv_cache: attn_rot_k = 0
+llama_kv_cache: attn_rot_v = 0
+sched_reserve: reserving ...
+sched_reserve: resolving fused Gated Delta Net support:
+sched_reserve: fused Gated Delta Net (autoregressive) enabled
+sched_reserve: fused Gated Delta Net (chunked) enabled
+sched_reserve:    Vulkan0 compute buffer size =   298.50 MiB
+sched_reserve: Vulkan_Host compute buffer size =    19.51 MiB
+sched_reserve: graph nodes  = 823
+sched_reserve: graph splits = 2
+sched_reserve: reserve took 55.05 ms, sched copies = 1
+slot   load_model: id  0 | task -1 | speculative decoding context initialized
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 1
+llama_context: n_ctx         = 8192
+llama_context: n_ctx_seq     = 8192
+llama_context: n_batch       = 8192
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = enabled
+llama_context: kv_unified    = true
+llama_context: freq_base     = 1000000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_seq (8192) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+llama_context: Vulkan_Host  output buffer size =     0.58 MiB
+llama_kv_cache:    Vulkan0 KV buffer size =    96.00 MiB
+llama_kv_cache: size =   96.00 MiB (  8192 cells,  24 layers,  1/1 seqs), K (f16):   48.00 MiB, V (f16):   48.00 MiB
+llama_kv_cache: attn_rot_k = 0
+llama_kv_cache: attn_rot_v = 0
+sched_reserve: reserving ...
+sched_reserve: resolving fused Gated Delta Net support:
+sched_reserve: fused Gated Delta Net (autoregressive) enabled
+sched_reserve: fused Gated Delta Net (chunked) enabled
+sched_reserve:    Vulkan0 compute buffer size =   298.50 MiB
+sched_reserve: Vulkan_Host compute buffer size =    19.51 MiB
+sched_reserve: graph nodes  = 823
+sched_reserve: graph splits = 2
+sched_reserve: reserve took 129.72 ms, sched copies = 1
+slot   load_model: id  1 | task -1 | speculative decoding context initialized
+slot   load_model: id  1 | task -1 | new slot, n_ctx = 8192
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 1
+llama_context: n_ctx         = 8192
+llama_context: n_ctx_seq     = 8192
+llama_context: n_batch       = 8192
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = enabled
+llama_context: kv_unified    = true
+llama_context: freq_base     = 1000000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_seq (8192) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+llama_context: Vulkan_Host  output buffer size =     0.58 MiB
+llama_kv_cache:    Vulkan0 KV buffer size =    96.00 MiB
+llama_kv_cache: size =   96.00 MiB (  8192 cells,  24 layers,  1/1 seqs), K (f16):   48.00 MiB, V (f16):   48.00 MiB
+llama_kv_cache: attn_rot_k = 0
+llama_kv_cache: attn_rot_v = 0
+sched_reserve: reserving ...
+sched_reserve: resolving fused Gated Delta Net support:
+sched_reserve: fused Gated Delta Net (autoregressive) enabled
+sched_reserve: fused Gated Delta Net (chunked) enabled
+sched_reserve:    Vulkan0 compute buffer size =   298.50 MiB
+sched_reserve: Vulkan_Host compute buffer size =    19.51 MiB
+sched_reserve: graph nodes  = 823
+sched_reserve: graph splits = 2
+sched_reserve: reserve took 164.83 ms, sched copies = 1
+slot   load_model: id  2 | task -1 | speculative decoding context initialized
+slot   load_model: id  2 | task -1 | new slot, n_ctx = 8192
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 1
+llama_context: n_ctx         = 8192
+llama_context: n_ctx_seq     = 8192
+llama_context: n_batch       = 8192
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = enabled
+llama_context: kv_unified    = true
+llama_context: freq_base     = 1000000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_seq (8192) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+llama_context: Vulkan_Host  output buffer size =     0.58 MiB
+llama_kv_cache:    Vulkan0 KV buffer size =    96.00 MiB
+llama_kv_cache: size =   96.00 MiB (  8192 cells,  24 layers,  1/1 seqs), K (f16):   48.00 MiB, V (f16):   48.00 MiB
+llama_kv_cache: attn_rot_k = 0
+llama_kv_cache: attn_rot_v = 0
+sched_reserve: reserving ...
+sched_reserve: resolving fused Gated Delta Net support:
+sched_reserve: fused Gated Delta Net (autoregressive) enabled
+sched_reserve: fused Gated Delta Net (chunked) enabled
+sched_reserve:    Vulkan0 compute buffer size =   298.50 MiB
+sched_reserve: Vulkan_Host compute buffer size =    19.51 MiB
+sched_reserve: graph nodes  = 823
+sched_reserve: graph splits = 2
+sched_reserve: reserve took 185.70 ms, sched copies = 1
+slot   load_model: id  3 | task -1 | speculative decoding context initialized
+slot   load_model: id  3 | task -1 | new slot, n_ctx = 8192
+srv    load_model: prompt cache is enabled, size limit: 8192 MiB
+srv    load_model: use `--cache-ram 0` to disable the prompt cache
+srv    load_model: for more info see https://github.com/ggml-org/llama.cpp/pull/16391
+srv          init: init: idle slots will be saved to prompt cache and cleared upon starting a new task
+init: chat template, example_format: '<|im_start|>system
+You are a helpful assistant<|im_end|>
+<|im_start|>user
+Hello<|im_end|>
+<|im_start|>assistant
+Hi there<|im_end|>
+<|im_start|>user
+How are you?<|im_end|>
+<|im_start|>assistant
+'
+srv          init: init: chat template, thinking = 0
+main: model loaded
+main: server is listening on http://127.0.0.1:8080
+main: starting the main loop...
+srv  update_slots: all slots are idle
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+srv  get_availabl: updating prompt cache
+srv          load:  - looking for better prompt, base f_keep = -1.000, sim = 0.000
+srv        update:  - cache state: 0 prompts, 0.000 MiB (limits: 8192.000 MiB, 8192 tokens, 8589934592 est)
+srv  get_availabl: prompt cache update took 0.01 ms
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+slot update_slots: id  3 | task 0 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 407
+slot update_slots: id  3 | task 0 | n_tokens = 0, memory_seq_rm [0, end)
+slot init_sampler: id  3 | task 0 | init sampler, took 0.06 ms, tokens: text = 407, total = 407
+slot update_slots: id  3 | task 0 | prompt processing done, n_tokens = 407, batch.n_tokens = 407
+slot print_timing: id  3 | task 0 | 
+prompt eval time =    1627.37 ms /   407 tokens (    4.00 ms per token,   250.10 tokens per second)
+       eval time =    3783.63 ms /    45 tokens (   84.08 ms per token,    11.89 tokens per second)
+      total time =    5411.00 ms /   452 tokens
+draft acceptance rate = 0.53846 (   21 accepted /    39 generated)
+statistics draft: #calls(b,g,a) = 1 23 10, #gen drafts = 23, #acc drafts = 10, #gen tokens = 39, #acc tokens = 21, dur(b,g,a) = 0.003, 629.570, 0.004 ms
+slot      release: id  3 | task 0 | stop processing: n_tokens = 451, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.943 (> 0.100 thold), f_keep = 0.996
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 25 | processing task, is_child = 0
+slot update_slots: id  3 | task 25 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 476
+slot update_slots: id  3 | task 25 | n_tokens = 449, memory_seq_rm [449, end)
+slot init_sampler: id  3 | task 25 | init sampler, took 0.06 ms, tokens: text = 476, total = 476
+slot update_slots: id  3 | task 25 | prompt processing done, n_tokens = 476, batch.n_tokens = 27
+slot print_timing: id  3 | task 25 | 
+prompt eval time =     212.20 ms /    27 tokens (    7.86 ms per token,   127.24 tokens per second)
+       eval time =    5799.72 ms /    63 tokens (   92.06 ms per token,    10.86 tokens per second)
+      total time =    6011.93 ms /    90 tokens
+draft acceptance rate = 0.40323 (   25 accepted /    62 generated)
+statistics draft: #calls(b,g,a) = 2 60 26, #gen drafts = 60, #acc drafts = 26, #gen tokens = 101, #acc tokens = 46, dur(b,g,a) = 0.003, 1487.830, 0.010 ms
+slot      release: id  3 | task 25 | stop processing: n_tokens = 538, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.968 (> 0.100 thold), f_keep = 0.996
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 64 | processing task, is_child = 0
+slot update_slots: id  3 | task 64 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 554
+slot update_slots: id  3 | task 64 | n_tokens = 536, memory_seq_rm [536, end)
+slot init_sampler: id  3 | task 64 | init sampler, took 0.09 ms, tokens: text = 554, total = 554
+slot update_slots: id  3 | task 64 | prompt processing done, n_tokens = 554, batch.n_tokens = 18
+slot print_timing: id  3 | task 64 | 
+prompt eval time =     208.42 ms /    18 tokens (   11.58 ms per token,    86.36 tokens per second)
+       eval time =    4027.16 ms /    51 tokens (   78.96 ms per token,    12.66 tokens per second)
+      total time =    4235.58 ms /    69 tokens
+draft acceptance rate = 0.54762 (   23 accepted /    42 generated)
+statistics draft: #calls(b,g,a) = 3 87 43, #gen drafts = 87, #acc drafts = 43, #gen tokens = 143, #acc tokens = 69, dur(b,g,a) = 0.004, 2135.028, 0.019 ms
+slot      release: id  3 | task 64 | stop processing: n_tokens = 604, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.973 (> 0.100 thold), f_keep = 0.997
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 93 | processing task, is_child = 0
+slot update_slots: id  3 | task 93 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 619
+slot update_slots: id  3 | task 93 | n_tokens = 602, memory_seq_rm [602, end)
+slot init_sampler: id  3 | task 93 | init sampler, took 0.08 ms, tokens: text = 619, total = 619
+slot update_slots: id  3 | task 93 | prompt processing done, n_tokens = 619, batch.n_tokens = 17
+slot print_timing: id  3 | task 93 | 
+prompt eval time =     205.40 ms /    17 tokens (   12.08 ms per token,    82.77 tokens per second)
+       eval time =    5208.85 ms /    66 tokens (   78.92 ms per token,    12.67 tokens per second)
+      total time =    5414.25 ms /    83 tokens
+draft acceptance rate = 0.59649 (   34 accepted /    57 generated)
+statistics draft: #calls(b,g,a) = 4 118 62, #gen drafts = 118, #acc drafts = 62, #gen tokens = 200, #acc tokens = 103, dur(b,g,a) = 0.004, 2936.437, 0.028 ms
+slot      release: id  3 | task 93 | stop processing: n_tokens = 684, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.976 (> 0.100 thold), f_keep = 0.997
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 126 | processing task, is_child = 0
+slot update_slots: id  3 | task 126 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 699
+slot update_slots: id  3 | task 126 | n_tokens = 682, memory_seq_rm [682, end)
+slot init_sampler: id  3 | task 126 | init sampler, took 0.11 ms, tokens: text = 699, total = 699
+slot update_slots: id  3 | task 126 | prompt processing done, n_tokens = 699, batch.n_tokens = 17
+slot print_timing: id  3 | task 126 | 
+prompt eval time =     207.40 ms /    17 tokens (   12.20 ms per token,    81.97 tokens per second)
+       eval time =    4877.98 ms /    61 tokens (   79.97 ms per token,    12.51 tokens per second)
+      total time =    5085.37 ms /    78 tokens
+draft acceptance rate = 0.58000 (   29 accepted /    50 generated)
+statistics draft: #calls(b,g,a) = 5 149 79, #gen drafts = 149, #acc drafts = 79, #gen tokens = 250, #acc tokens = 132, dur(b,g,a) = 0.005, 3672.498, 0.036 ms
+slot      release: id  3 | task 126 | stop processing: n_tokens = 759, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.966 (> 0.100 thold), f_keep = 0.997
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 159 | processing task, is_child = 0
+slot update_slots: id  3 | task 159 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 784
+slot update_slots: id  3 | task 159 | n_tokens = 757, memory_seq_rm [757, end)
+slot init_sampler: id  3 | task 159 | init sampler, took 0.11 ms, tokens: text = 784, total = 784
+slot update_slots: id  3 | task 159 | prompt processing done, n_tokens = 784, batch.n_tokens = 27
+slot print_timing: id  3 | task 159 | 
+prompt eval time =     215.05 ms /    27 tokens (    7.96 ms per token,   125.55 tokens per second)
+       eval time =    4918.49 ms /    58 tokens (   84.80 ms per token,    11.79 tokens per second)
+      total time =    5133.55 ms /    85 tokens
+draft acceptance rate = 0.48980 (   24 accepted /    49 generated)
+statistics draft: #calls(b,g,a) = 6 182 93, #gen drafts = 182, #acc drafts = 93, #gen tokens = 299, #acc tokens = 156, dur(b,g,a) = 0.006, 4394.216, 0.041 ms
+slot      release: id  3 | task 159 | stop processing: n_tokens = 841, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.974 (> 0.100 thold), f_keep = 0.998
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 194 | processing task, is_child = 0
+slot update_slots: id  3 | task 194 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 861
+slot update_slots: id  3 | task 194 | n_tokens = 839, memory_seq_rm [839, end)
+slot init_sampler: id  3 | task 194 | init sampler, took 0.07 ms, tokens: text = 861, total = 861
+slot update_slots: id  3 | task 194 | prompt processing done, n_tokens = 861, batch.n_tokens = 22
+slot print_timing: id  3 | task 194 | 
+prompt eval time =     211.43 ms /    22 tokens (    9.61 ms per token,   104.05 tokens per second)
+       eval time =    4864.41 ms /    62 tokens (   78.46 ms per token,    12.75 tokens per second)
+      total time =    5075.84 ms /    84 tokens
+draft acceptance rate = 0.63830 (   30 accepted /    47 generated)
+statistics draft: #calls(b,g,a) = 7 213 115, #gen drafts = 213, #acc drafts = 115, #gen tokens = 346, #acc tokens = 186, dur(b,g,a) = 0.007, 5123.934, 0.051 ms
+slot      release: id  3 | task 194 | stop processing: n_tokens = 922, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.980 (> 0.100 thold), f_keep = 1.000
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 227 | processing task, is_child = 0
+slot update_slots: id  3 | task 227 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 941
+slot update_slots: id  3 | task 227 | n_tokens = 922, memory_seq_rm [922, end)
+slot init_sampler: id  3 | task 227 | init sampler, took 0.14 ms, tokens: text = 941, total = 941
+slot update_slots: id  3 | task 227 | prompt processing done, n_tokens = 941, batch.n_tokens = 19
+slot print_timing: id  3 | task 227 | 
+prompt eval time =     210.67 ms /    19 tokens (   11.09 ms per token,    90.19 tokens per second)
+       eval time =    6389.03 ms /    69 tokens (   92.59 ms per token,    10.80 tokens per second)
+      total time =    6599.70 ms /    88 tokens
+draft acceptance rate = 0.40299 (   27 accepted /    67 generated)
+statistics draft: #calls(b,g,a) = 8 254 136, #gen drafts = 254, #acc drafts = 136, #gen tokens = 413, #acc tokens = 213, dur(b,g,a) = 0.007, 6043.391, 0.062 ms
+slot      release: id  3 | task 227 | stop processing: n_tokens = 1009, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.977 (> 0.100 thold), f_keep = 0.998
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 270 | processing task, is_child = 0
+slot update_slots: id  3 | task 270 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 1031
+slot update_slots: id  3 | task 270 | n_tokens = 1007, memory_seq_rm [1007, end)
+slot init_sampler: id  3 | task 270 | init sampler, took 0.14 ms, tokens: text = 1031, total = 1031
+slot update_slots: id  3 | task 270 | prompt processing done, n_tokens = 1031, batch.n_tokens = 24
+slot print_timing: id  3 | task 270 | 
+prompt eval time =     214.69 ms /    24 tokens (    8.95 ms per token,   111.79 tokens per second)
+       eval time =    6365.47 ms /    76 tokens (   83.76 ms per token,    11.94 tokens per second)
+      total time =    6580.16 ms /   100 tokens
+draft acceptance rate = 0.53030 (   35 accepted /    66 generated)
+statistics draft: #calls(b,g,a) = 9 294 160, #gen drafts = 294, #acc drafts = 160, #gen tokens = 479, #acc tokens = 248, dur(b,g,a) = 0.007, 6960.867, 0.070 ms
+slot      release: id  3 | task 270 | stop processing: n_tokens = 1106, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.980 (> 0.100 thold), f_keep = 0.998
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 312 | processing task, is_child = 0
+slot update_slots: id  3 | task 312 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 1127
+slot update_slots: id  3 | task 312 | n_tokens = 1104, memory_seq_rm [1104, end)
+slot init_sampler: id  3 | task 312 | init sampler, took 0.15 ms, tokens: text = 1127, total = 1127
+slot update_slots: id  3 | task 312 | prompt processing done, n_tokens = 1127, batch.n_tokens = 23
+slot print_timing: id  3 | task 312 | 
+prompt eval time =     215.47 ms /    23 tokens (    9.37 ms per token,   106.74 tokens per second)
+       eval time =    5314.78 ms /    65 tokens (   81.77 ms per token,    12.23 tokens per second)
+      total time =    5530.25 ms /    88 tokens
+draft acceptance rate = 0.56863 (   29 accepted /    51 generated)
+statistics draft: #calls(b,g,a) = 10 329 179, #gen drafts = 329, #acc drafts = 179, #gen tokens = 530, #acc tokens = 277, dur(b,g,a) = 0.007, 7720.755, 0.080 ms
+slot      release: id  3 | task 312 | stop processing: n_tokens = 1191, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.984 (> 0.100 thold), f_keep = 0.998
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 349 | processing task, is_child = 0
+slot update_slots: id  3 | task 349 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 1208
+slot update_slots: id  3 | task 349 | n_tokens = 1189, memory_seq_rm [1189, end)
+slot init_sampler: id  3 | task 349 | init sampler, took 0.16 ms, tokens: text = 1208, total = 1208
+slot update_slots: id  3 | task 349 | prompt processing done, n_tokens = 1208, batch.n_tokens = 19
+slot print_timing: id  3 | task 349 | 
+prompt eval time =     213.84 ms /    19 tokens (   11.25 ms per token,    88.85 tokens per second)
+       eval time =    9484.89 ms /   101 tokens (   93.91 ms per token,    10.65 tokens per second)
+      total time =    9698.73 ms /   120 tokens
+draft acceptance rate = 0.42157 (   43 accepted /   102 generated)
+statistics draft: #calls(b,g,a) = 11 386 209, #gen drafts = 386, #acc drafts = 209, #gen tokens = 632, #acc tokens = 320, dur(b,g,a) = 0.007, 9117.801, 0.095 ms
+slot      release: id  3 | task 349 | stop processing: n_tokens = 1308, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.924 (> 0.100 thold), f_keep = 0.937
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 408 | processing task, is_child = 0
+slot update_slots: id  3 | task 408 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 1326
+slot update_slots: id  3 | task 408 | n_tokens = 1225, memory_seq_rm [1225, end)
+slot init_sampler: id  3 | task 408 | init sampler, took 0.17 ms, tokens: text = 1326, total = 1326
+slot update_slots: id  3 | task 408 | prompt processing done, n_tokens = 1326, batch.n_tokens = 101
+slot print_timing: id  3 | task 408 | 
+prompt eval time =     478.70 ms /   101 tokens (    4.74 ms per token,   210.99 tokens per second)
+       eval time =    6573.22 ms /    83 tokens (   79.20 ms per token,    12.63 tokens per second)
+      total time =    7051.92 ms /   184 tokens
+draft acceptance rate = 0.59459 (   44 accepted /    74 generated)
+statistics draft: #calls(b,g,a) = 12 424 233, #gen drafts = 424, #acc drafts = 233, #gen tokens = 706, #acc tokens = 364, dur(b,g,a) = 0.007, 10174.257, 0.104 ms
+slot      release: id  3 | task 408 | stop processing: n_tokens = 1408, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.984 (> 0.100 thold), f_keep = 0.999
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 448 | processing task, is_child = 0
+slot update_slots: id  3 | task 448 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 1429
+slot update_slots: id  3 | task 448 | n_tokens = 1406, memory_seq_rm [1406, end)
+slot init_sampler: id  3 | task 448 | init sampler, took 0.19 ms, tokens: text = 1429, total = 1429
+slot update_slots: id  3 | task 448 | prompt processing done, n_tokens = 1429, batch.n_tokens = 23
+slot print_timing: id  3 | task 448 | 
+prompt eval time =     218.89 ms /    23 tokens (    9.52 ms per token,   105.07 tokens per second)
+       eval time =    8720.99 ms /    99 tokens (   88.09 ms per token,    11.35 tokens per second)
+      total time =    8939.89 ms /   122 tokens
+draft acceptance rate = 0.50000 (   41 accepted /    82 generated)
+statistics draft: #calls(b,g,a) = 13 481 264, #gen drafts = 481, #acc drafts = 264, #gen tokens = 788, #acc tokens = 405, dur(b,g,a) = 0.007, 11418.769, 0.115 ms
+slot      release: id  3 | task 448 | stop processing: n_tokens = 1527, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.985 (> 0.100 thold), f_keep = 1.000
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 507 | processing task, is_child = 0
+slot update_slots: id  3 | task 507 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 1550
+slot update_slots: id  3 | task 507 | n_tokens = 1527, memory_seq_rm [1527, end)
+slot init_sampler: id  3 | task 507 | init sampler, took 0.20 ms, tokens: text = 1550, total = 1550
+slot update_slots: id  3 | task 507 | prompt processing done, n_tokens = 1550, batch.n_tokens = 23
+slot print_timing: id  3 | task 507 | 
+prompt eval time =     220.42 ms /    23 tokens (    9.58 ms per token,   104.35 tokens per second)
+       eval time =    8601.22 ms /   104 tokens (   82.70 ms per token,    12.09 tokens per second)
+      total time =    8821.64 ms /   127 tokens
+draft acceptance rate = 0.52809 (   47 accepted /    89 generated)
+statistics draft: #calls(b,g,a) = 14 537 298, #gen drafts = 537, #acc drafts = 298, #gen tokens = 877, #acc tokens = 452, dur(b,g,a) = 0.007, 12710.070, 0.129 ms
+slot      release: id  3 | task 507 | stop processing: n_tokens = 1653, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.986 (> 0.100 thold), f_keep = 0.999
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 565 | processing task, is_child = 0
+slot update_slots: id  3 | task 565 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 1675
+slot update_slots: id  3 | task 565 | n_tokens = 1651, memory_seq_rm [1651, end)
+slot init_sampler: id  3 | task 565 | init sampler, took 0.22 ms, tokens: text = 1675, total = 1675
+slot update_slots: id  3 | task 565 | prompt processing done, n_tokens = 1675, batch.n_tokens = 24
+slot print_timing: id  3 | task 565 | 
+prompt eval time =     222.07 ms /    24 tokens (    9.25 ms per token,   108.07 tokens per second)
+       eval time =    8298.90 ms /    91 tokens (   91.20 ms per token,    10.97 tokens per second)
+      total time =    8520.97 ms /   115 tokens
+draft acceptance rate = 0.43590 (   34 accepted /    78 generated)
+statistics draft: #calls(b,g,a) = 15 593 324, #gen drafts = 593, #acc drafts = 324, #gen tokens = 955, #acc tokens = 486, dur(b,g,a) = 0.007, 13860.047, 0.143 ms
+slot      release: id  3 | task 565 | stop processing: n_tokens = 1765, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.984 (> 0.100 thold), f_keep = 1.000
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 623 | processing task, is_child = 0
+slot update_slots: id  3 | task 623 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 1793
+slot update_slots: id  3 | task 623 | n_tokens = 1765, memory_seq_rm [1765, end)
+slot init_sampler: id  3 | task 623 | init sampler, took 0.24 ms, tokens: text = 1793, total = 1793
+slot update_slots: id  3 | task 623 | prompt processing done, n_tokens = 1793, batch.n_tokens = 28
+slot print_timing: id  3 | task 623 | 
+prompt eval time =     227.55 ms /    28 tokens (    8.13 ms per token,   123.05 tokens per second)
+       eval time =    4324.23 ms /    63 tokens (   68.64 ms per token,    14.57 tokens per second)
+      total time =    4551.78 ms /    91 tokens
+draft acceptance rate = 0.74468 (   35 accepted /    47 generated)
+statistics draft: #calls(b,g,a) = 16 620 344, #gen drafts = 620, #acc drafts = 344, #gen tokens = 1002, #acc tokens = 521, dur(b,g,a) = 0.008, 14594.018, 0.154 ms
+slot      release: id  3 | task 623 | stop processing: n_tokens = 1855, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.990 (> 0.100 thold), f_keep = 0.999
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 652 | processing task, is_child = 0
+slot update_slots: id  3 | task 652 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 1871
+slot update_slots: id  3 | task 652 | n_tokens = 1853, memory_seq_rm [1853, end)
+slot init_sampler: id  3 | task 652 | init sampler, took 0.25 ms, tokens: text = 1871, total = 1871
+slot update_slots: id  3 | task 652 | prompt processing done, n_tokens = 1871, batch.n_tokens = 18
+slot print_timing: id  3 | task 652 | 
+prompt eval time =     220.27 ms /    18 tokens (   12.24 ms per token,    81.72 tokens per second)
+       eval time =    7936.31 ms /    84 tokens (   94.48 ms per token,    10.58 tokens per second)
+      total time =    8156.58 ms /   102 tokens
+draft acceptance rate = 0.41558 (   32 accepted /    77 generated)
+statistics draft: #calls(b,g,a) = 17 671 365, #gen drafts = 671, #acc drafts = 365, #gen tokens = 1079, #acc tokens = 553, dur(b,g,a) = 0.008, 15714.052, 0.159 ms
+slot      release: id  3 | task 652 | stop processing: n_tokens = 1954, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.989 (> 0.100 thold), f_keep = 1.000
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 705 | processing task, is_child = 0
+slot update_slots: id  3 | task 705 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 1976
+slot update_slots: id  3 | task 705 | n_tokens = 1954, memory_seq_rm [1954, end)
+slot init_sampler: id  3 | task 705 | init sampler, took 0.26 ms, tokens: text = 1976, total = 1976
+slot update_slots: id  3 | task 705 | prompt processing done, n_tokens = 1976, batch.n_tokens = 22
+slot print_timing: id  3 | task 705 | 
+prompt eval time =     224.24 ms /    22 tokens (   10.19 ms per token,    98.11 tokens per second)
+       eval time =    8945.69 ms /   106 tokens (   84.39 ms per token,    11.85 tokens per second)
+      total time =    9169.93 ms /   128 tokens
+draft acceptance rate = 0.54118 (   46 accepted /    85 generated)
+statistics draft: #calls(b,g,a) = 18 730 395, #gen drafts = 730, #acc drafts = 395, #gen tokens = 1164, #acc tokens = 599, dur(b,g,a) = 0.008, 17003.224, 0.168 ms
+slot      release: id  3 | task 705 | stop processing: n_tokens = 2081, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.993 (> 0.100 thold), f_keep = 0.999
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 766 | processing task, is_child = 0
+slot update_slots: id  3 | task 766 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 2093
+slot update_slots: id  3 | task 766 | n_tokens = 2079, memory_seq_rm [2079, end)
+slot init_sampler: id  3 | task 766 | init sampler, took 0.28 ms, tokens: text = 2093, total = 2093
+slot update_slots: id  3 | task 766 | prompt processing done, n_tokens = 2093, batch.n_tokens = 14
+slot print_timing: id  3 | task 766 | 
+prompt eval time =     213.85 ms /    14 tokens (   15.27 ms per token,    65.47 tokens per second)
+       eval time =    3506.06 ms /    40 tokens (   87.65 ms per token,    11.41 tokens per second)
+      total time =    3719.91 ms /    54 tokens
+draft acceptance rate = 0.53846 (   21 accepted /    39 generated)
+statistics draft: #calls(b,g,a) = 19 748 407, #gen drafts = 748, #acc drafts = 407, #gen tokens = 1203, #acc tokens = 620, dur(b,g,a) = 0.008, 17559.872, 0.174 ms
+slot      release: id  3 | task 766 | stop processing: n_tokens = 2132, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.990 (> 0.100 thold), f_keep = 0.999
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 786 | processing task, is_child = 0
+slot update_slots: id  3 | task 786 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 2152
+slot update_slots: id  3 | task 786 | n_tokens = 2130, memory_seq_rm [2130, end)
+slot init_sampler: id  3 | task 786 | init sampler, took 0.31 ms, tokens: text = 2152, total = 2152
+slot update_slots: id  3 | task 786 | prompt processing done, n_tokens = 2152, batch.n_tokens = 22
+slot print_timing: id  3 | task 786 | 
+prompt eval time =     225.06 ms /    22 tokens (   10.23 ms per token,    97.75 tokens per second)
+       eval time =    3637.73 ms /    43 tokens (   84.60 ms per token,    11.82 tokens per second)
+      total time =    3862.80 ms /    65 tokens
+draft acceptance rate = 0.54054 (   20 accepted /    37 generated)
+statistics draft: #calls(b,g,a) = 20 770 419, #gen drafts = 770, #acc drafts = 419, #gen tokens = 1240, #acc tokens = 640, dur(b,g,a) = 0.008, 18116.207, 0.181 ms
+slot      release: id  3 | task 786 | stop processing: n_tokens = 2194, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200

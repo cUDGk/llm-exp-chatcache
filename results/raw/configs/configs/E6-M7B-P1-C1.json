@@ -1,0 +1,43 @@
+{
+  "case_id": "E6-M7B-P1-C1",
+  "date": "2026-04-14T12:45:03",
+  "model": {
+    "key": "M7B",
+    "file": "Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+    "family": "qwen2.5",
+    "draft": "Qwen2.5-0.5B-Instruct-Q8_0.gguf",
+    "label": "Qwen2.5-7B"
+  },
+  "persona": {
+    "key": "P1",
+    "label": "rpg-rina",
+    "thinking": "disable"
+  },
+  "cond": {
+    "key": "C1",
+    "label": "cache",
+    "cache_prompt": true,
+    "speculative": false
+  },
+  "context": 8192,
+  "max_tokens_per_turn": 1024,
+  "server_cmd": [
+    "C:\\llm-exp\\llama.cpp\\llama-server.exe",
+    "-m",
+    "C:\\llm-exp\\models\\Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+    "-ngl",
+    "999",
+    "-c",
+    "8192",
+    "-fa",
+    "on",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8080",
+    "--threads",
+    "16",
+    "--seed",
+    "42"
+  ]
+}

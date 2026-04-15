@@ -1,0 +1,95 @@
+case_id,date,model_key,model_file,model_family,persona_key,persona_label,cond_key,cond_label,backend,context,cache_prompt,speculative,turns,load_sec,total_elapsed_sec,avg_prompt_tps,avg_gen_tps,sum_prompt_tokens,sum_gen_tokens,stable,notes
+E6-M3B-P0-C0,2026-04-14,M3B,Qwen2.5-3B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C0,baseline,vulkan+fa,8192,false,false,20,4.0,122.48,509.5,30.0,19771,1267,true,ok
+E6-M3B-P0-C1,2026-04-14,M3B,Qwen2.5-3B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C1,cache,vulkan+fa,8192,true,false,20,4.0,83.28,6817.6,32.3,19857,1254,true,ok
+E6-M3B-P0-C2,2026-04-14,M3B,Qwen2.5-3B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C2,cache+spec,vulkan+fa,8192,true,true,20,4.0,86.3,6765.2,30.3,19090,1279,true,ok
+E6-M3B-P1-C0,2026-04-14,M3B,Qwen2.5-3B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C0,baseline,vulkan+fa,8192,false,false,20,4.0,98.07,676.9,33.1,20670,862,true,ok
+E6-M3B-P1-C1,2026-04-14,M3B,Qwen2.5-3B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C1,cache,vulkan+fa,8192,true,false,20,4.0,73.08,6697.3,32.8,21082,936,true,ok
+E6-M3B-P1-C2,2026-04-14,M3B,Qwen2.5-3B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C2,cache+spec,vulkan+fa,8192,true,true,20,4.0,83.09,7237.4,30.8,22827,1187,true,ok
+E6-M3B-P2-C0,2026-04-14,M3B,Qwen2.5-3B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C0,baseline,vulkan+fa,8192,false,false,20,4.0,97.01,731.0,32.9,22186,832,true,ok
+E6-M3B-P2-C1,2026-04-14,M3B,Qwen2.5-3B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C1,cache,vulkan+fa,8192,true,false,20,4.0,68.37,6620.5,33.0,22083,778,true,ok
+E6-M3B-P2-C2,2026-04-14,M3B,Qwen2.5-3B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C2,cache+spec,vulkan+fa,8192,true,true,20,4.0,69.89,6568.8,30.6,21478,773,true,ok
+E6-M7B-P0-C0,2026-04-14,M7B,Qwen2.5-7B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C0,baseline,vulkan+fa,8192,false,false,20,8.0,668.85,160.7,10.8,46325,3676,true,ok
+E6-M7B-P0-C1,2026-04-14,M7B,Qwen2.5-7B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C1,cache,vulkan+fa,8192,true,false,20,4.0,344.98,7000.7,11.5,43762,3408,true,ok
+E6-M7B-P0-C2,2026-04-14,M7B,Qwen2.5-7B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C2,cache+spec,vulkan+fa,8192,true,true,20,8.1,270.77,6556.2,15.8,43339,3516,true,ok
+E6-M7B-P1-C0,2026-04-14,M7B,Qwen2.5-7B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C0,baseline,vulkan+fa,8192,false,false,20,4.0,240.46,257.0,13.0,24706,1338,true,ok
+E6-M7B-P1-C1,2026-04-14,M7B,Qwen2.5-7B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C1,cache,vulkan+fa,8192,true,false,20,4.0,139.91,4107.5,13.2,23226,1221,true,ok
+E6-M7B-P1-C2,2026-04-14,M7B,Qwen2.5-7B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C2,cache+spec,vulkan+fa,8192,true,true,20,8.0,168.81,4100.1,11.8,24572,1430,true,ok
+E6-M7B-P2-C0,2026-04-14,M7B,Qwen2.5-7B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C0,baseline,vulkan+fa,8192,false,false,20,4.0,310.32,290.6,13.1,33866,2004,true,ok
+E6-M7B-P2-C1,2026-04-14,M7B,Qwen2.5-7B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C1,cache,vulkan+fa,8192,true,false,20,4.0,204.26,5158.4,13.0,34340,2038,true,ok
+E6-M7B-P2-C2,2026-04-14,M7B,Qwen2.5-7B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C2,cache+spec,vulkan+fa,8192,true,true,20,8.0,201.42,4592.8,12.7,31498,1950,true,ok
+E6-M14B-P0-C0,2026-04-14,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C0,baseline,vulkan+fa,8192,false,false,20,12.1,1104.54,67.5,6.6,39778,3131,true,ok
+E6-M14B-P0-C1,2026-04-14,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C1,cache,vulkan+fa,8192,true,false,8,8.1,215.46,1743.8,7.5,6408,1462,false,turn_9_error: HTTPError: HTTP Error 500: Internal Server Error
+E6-M14B-P0-C2,2026-04-14,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C2,cache+spec,vulkan+fa,8192,true,true,20,12.1,360.85,4304.1,9.1,35265,2821,true,ok
+E6-M14B-P0-C1,2026-04-14,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C1,cache,vulkan+fa,8192,true,false,3,4.0,46.4,527.6,13.3,668,510,false,turn_4_error: ConnectionResetError: [WinError 10054] 既存の接続はリモート ホストに強制的に切断されました。
+E6-M14B-P1-C0,2026-04-14,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C0,baseline,vulkan+fa,8192,false,false,20,8.1,460.3,105.6,5.6,22074,989,true,ok
+E6-M14B-P0-C2,2026-04-14,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C2,cache+spec,vulkan+fa,8192,true,true,5,8.0,387.96,57.8,3.5,2132,1139,false,turn_6_error: ConnectionResetError: [WinError 10054] 既存の接続はリモート ホストに強制的に切断されました。
+E6-M14B-P1-C1,2026-04-14,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C1,cache,vulkan+fa,8192,true,false,20,8.0,427.31,1558.0,5.5,21359,899,true,ok
+E6-M14B-P1-C0,2026-04-14,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C0,baseline,vulkan+fa,8192,false,false,19,8.0,400.64,1495.9,5.6,19625,885,false,turn_20_error: ConnectionResetError: [WinError 10054] 既存の接続はリモート ホストに強制的に切断されました。
+E6-M14B-P1-C1,2026-04-14,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C1,cache,vulkan+fa,8192,true,false,20,8.0,428.68,1618.7,4.7,20990,945,true,ok
+E6-M14B-P2-C0,2026-04-14,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C0,baseline,vulkan+fa,8192,false,false,13,8.0,318.96,1719.7,5.5,15080,1305,false,turn_14_error: ConnectionResetError: [WinError 10054] 既存の接続はリモート ホストに強制的に切断されました。
+E6-M14B-P2-C1,2026-04-14,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C1,cache,vulkan+fa,8192,true,false,18,8.1,1121.0,101.7,3.0,30548,2313,false,turn_19_error: ConnectionResetError: [WinError 10054] 既存の接続はリモート ホストに強制的に切断されました。
+E6-M14B-P2-C1,2026-04-14,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C1,cache,vulkan+fa,8192,true,false,20,8.1,548.43,2372.4,5.2,32113,1943,true,ok
+E6-M14B-P2-C2,2026-04-14,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C2,cache+spec,vulkan+fa,8192,true,true,19,8.0,543.93,2084.3,5.3,29288,1923,false,turn_20_error: ConnectionResetError: [WinError 10054] 既存の接続はリモート ホストに強制的に切断されました。
+E6-M14B-P2-C2,2026-04-14,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C2,cache+spec,vulkan+fa,8192,true,true,16,16.1,589.58,1968.8,3.9,23010,1893,false,turn_17_error: ConnectionResetError: [WinError 10054] 既存の接続はリモート ホストに強制的に切断されました。
+E6-M30A3-P0-C0,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P0,plain-assistant,C0,baseline,vulkan+fa,8192,false,false,16,12.1,569.94,2620.4,5.0,24177,2340,false,turn_17_error: ConnectionResetError: [WinError 10054] 既存の接続はリモート ホストに強制的に切断されました。
+E6-M30A3-P0-C0,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P0,plain-assistant,C0,baseline,vulkan+fa,8192,false,false,4,4.0,334.61,58.1,3.2,1268,803,false,turn_5_error: ConnectionResetError: [WinError 10054] 既存の接続はリモート ホストに強制的に切断されました。
+E6-M30A3-P0-C1,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P0,plain-assistant,C1,cache,vulkan+fa,8192,true,false,4,4.0,294.42,58.1,3.7,1268,770,false,turn_5_error: ConnectionResetError: [WinError 10054] 既存の接続はリモート ホストに強制的に切断されました。
+E6-M14B-P0-C1,2026-04-14,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C1,cache,vulkan+fa,8192,true,false,20,4.0,1024.42,708.2,5.1,40332,3312,true,ok
+E6-M30A3-P0-C1,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P0,plain-assistant,C1,cache,vulkan+fa,8192,true,false,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M30A3-P0-C2,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P0,plain-assistant,C2,cache+spec,vulkan+fa,8192,true,true,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M30A3-P0-C2,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P0,plain-assistant,C2,cache+spec,vulkan+fa,8192,true,true,8,4.0,454.22,492.9,4.1,6712,1569,false,turn_9_error: HTTPError: HTTP Error 500: Internal Server Error
+E6-M30A3-P1-C0,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P1,rpg-rina,C0,baseline,vulkan+fa,8192,false,false,13,4.0,397.04,593.6,2.8,11063,716,false,turn_14_error: ConnectionResetError: [WinError 10054] 既存の接続はリモート ホストに強制的に切断されました。
+E6-M30A3-P1-C1,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P1,rpg-rina,C1,cache,vulkan+fa,8192,true,false,16,4.0,465.66,997.0,3.0,15767,940,false,turn_17_error: ConnectionResetError: [WinError 10054] 既存の接続はリモート ホストに強制的に切断されました。
+E6-M30A3-P1-C1,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P1,rpg-rina,C1,cache,vulkan+fa,8192,true,false,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M30A3-P0-C0,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P0,plain-assistant,C0,baseline,vulkan+fa,8192,false,false,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M30A3-P1-C2,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P1,rpg-rina,C2,cache+spec,vulkan+fa,8192,true,true,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M30A3-P0-C1,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P0,plain-assistant,C1,cache,vulkan+fa,8192,true,false,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M30A3-P1-C2,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P1,rpg-rina,C2,cache+spec,vulkan+fa,8192,true,true,1,32.1,37.16,78.6,1.6,407,48,false,turn_2_error: ConnectionResetError: [WinError 10054] 既存の接続はリモート ホストに強制的に切断されました。
+E6-M30A3-P2-C0,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P2,retired-fisher,C0,baseline,vulkan+fa,8192,false,false,0,4.0,0.0,0,0,0,0,false,turn_1_error: ConnectionResetError: [WinError 10054] 既存の接続はリモート ホストに強制的に切断されました。
+E6-M30A3-P0-C2,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P0,plain-assistant,C2,cache+spec,vulkan+fa,8192,true,true,0,4.0,0.0,0,0,0,0,false,turn_1_error: HTTPError: HTTP Error 503: Service Unavailable
+E6-M30A3-P2-C1,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P2,retired-fisher,C1,cache,vulkan+fa,8192,true,false,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M30A3-P2-C0,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P2,retired-fisher,C0,baseline,vulkan+fa,8192,false,false,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M30A3-P2-C1,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P2,retired-fisher,C1,cache,vulkan+fa,8192,true,false,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M30A3-P2-C2,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P2,retired-fisher,C2,cache+spec,vulkan+fa,8192,true,true,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M30A3-P0-C0,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P0,plain-assistant,C0,baseline,vulkan+fa,8192,false,false,20,20.4,480.27,331.1,23.5,28718,8264,true,ok
+E6-M30A3-P0-C1,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P0,plain-assistant,C1,cache,vulkan+fa,8192,true,false,20,20.1,445.96,2279.5,24.3,36593,9424,true,ok
+E6-M30A3-P0-C2,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P0,plain-assistant,C2,cache+spec,vulkan+fa,8192,true,true,20,16.1,519.22,2208.2,18.5,33468,8568,true,ok
+E6-M30A3-P1-C1,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P1,rpg-rina,C1,cache,vulkan+fa,8192,true,false,20,12.1,90.93,2079.5,27.3,21596,1067,true,ok
+E6-M30A3-P1-C2,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P1,rpg-rina,C2,cache+spec,vulkan+fa,8192,true,true,20,16.1,111.21,2117.2,17.6,21489,1052,true,ok
+E6-M30A3-P2-C0,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P2,retired-fisher,C0,baseline,vulkan+fa,8192,false,false,20,12.1,410.01,367.9,26.3,31825,7402,true,ok
+E6-M30A3-P2-C1,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P2,retired-fisher,C1,cache,vulkan+fa,8192,true,false,20,12.1,339.01,2444.5,26.1,34768,7400,true,ok
+E6-M30A3-P2-C2,2026-04-14,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P2,retired-fisher,C2,cache+spec,vulkan+fa,8192,true,true,20,16.1,513.0,2498.3,18.0,33727,8259,true,ok
+E6-M32B-P0-C0,2026-04-14,M32B,Qwen2.5-32B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C0,baseline,vulkan+fa,8192,false,false,20,20.1,2228.36,23.3,2.9,31746,2380,true,ok
+E6-M32B-P0-C1,2026-04-14,M32B,Qwen2.5-32B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C1,cache,vulkan+fa,8192,true,false,20,20.1,1041.73,824.2,3.0,35242,2914,true,ok
+E6-M32B-P0-C2,2026-04-14,M32B,Qwen2.5-32B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C2,cache+spec,vulkan+fa,8192,true,true,20,20.1,846.01,859.4,4.5,39652,3378,true,ok
+E6-M32B-P1-C0,2026-04-14,M32B,Qwen2.5-32B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C0,baseline,vulkan+fa,8192,false,false,20,20.1,1168.53,29.8,3.2,23019,1132,true,ok
+E6-M32B-P1-C1,2026-04-14,M32B,Qwen2.5-32B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C1,cache,vulkan+fa,8192,true,false,20,16.1,380.19,603.0,3.3,21427,992,true,ok
+E6-M32B-P1-C2,2026-04-14,M32B,Qwen2.5-32B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C2,cache+spec,vulkan+fa,8192,true,true,20,16.1,345.7,670.5,3.7,21409,996,true,ok
+E6-M32B-P2-C0,2026-04-14,M32B,Qwen2.5-32B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C0,baseline,vulkan+fa,8192,false,false,20,16.1,1282.54,35.4,3.3,28420,1457,true,ok
+E6-M32B-P2-C1,2026-04-14,M32B,Qwen2.5-32B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C1,cache,vulkan+fa,8192,true,false,20,16.1,579.15,934.5,3.3,29874,1693,true,ok
+E6-M32B-P2-C2,2026-04-14,M32B,Qwen2.5-32B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C2,cache+spec,vulkan+fa,8192,true,true,20,16.1,498.41,1070.2,3.9,29397,1698,true,ok
+E6-M72B-P0-C0,2026-04-14,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C0,baseline,vulkan+fa,8192,false,false,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M72B-P0-C1,2026-04-14,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C1,cache,vulkan+fa,8192,true,false,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M72B-P0-C2,2026-04-14,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C2,cache+spec,vulkan+fa,8192,true,true,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M72B-P1-C0,2026-04-14,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C0,baseline,vulkan+fa,8192,false,false,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M72B-P1-C1,2026-04-14,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C1,cache,vulkan+fa,8192,true,false,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M72B-P1-C2,2026-04-14,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C2,cache+spec,vulkan+fa,8192,true,true,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M72B-P2-C0,2026-04-14,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C0,baseline,vulkan+fa,8192,false,false,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M72B-P2-C1,2026-04-14,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C1,cache,vulkan+fa,8192,true,false,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M72B-P2-C2,2026-04-14,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C2,cache+spec,vulkan+fa,8192,true,true,0,0,0,0,0,0,0,false,server_failed_to_start
+E6-M72B-P0-C0,2026-04-14,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C0,baseline,vulkan+fa,4096,false,false,20,32.1,8591.15,7.7,1.1,43522,3183,true,ok
+E6-M72B-P0-C1,2026-04-14,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C1,cache,vulkan+fa,4096,true,false,20,36.2,3339.09,362.3,1.1,46663,3455,true,ok
+E6-M72B-P0-C2,2026-04-14,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P0,plain-assistant,C2,cache+spec,vulkan+fa,4096,true,true,20,36.2,1960.68,378.3,2.0,46055,3513,true,ok
+E6-M72B-P1-C0,2026-04-14,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C0,baseline,vulkan+fa,4096,false,false,20,36.2,4598.63,7.5,1.1,25178,1382,true,ok
+E6-M72B-P1-C1,2026-04-15,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C1,cache,vulkan+fa,4096,true,false,20,40.1,1393.22,134.6,1.1,24796,1312,true,ok
+E6-M72B-P1-C2,2026-04-15,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C2,cache+spec,vulkan+fa,4096,true,true,20,40.2,1033.24,142.4,1.6,24017,1292,true,ok
+E6-M72B-P2-C0,2026-04-15,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C0,baseline,vulkan+fa,4096,false,false,18,36.2,5530.66,15.1,1.1,38171,3199,false,turn_19_error: HTTPError: HTTP Error 400: Bad Request
+E6-M72B-P2-C1,2026-04-15,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C1,cache,vulkan+fa,4096,true,false,16,36.2,3312.04,128.9,1.1,31890,3254,false,turn_17_error: HTTPError: HTTP Error 400: Bad Request
+E6-M72B-P2-C2,2026-04-15,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C2,cache+spec,vulkan+fa,4096,true,true,13,36.2,2280.12,171.3,1.6,25490,3343,false,turn_14_error: HTTPError: HTTP Error 400: Bad Request
+E6-M72B-P2-C0,2026-04-15,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C0,baseline,vulkan+fa,6144,false,false,20,36.2,10840.67,6.7,1.1,48647,3747,true,ok
+E6-M72B-P2-C1,2026-04-15,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C1,cache,vulkan+fa,6144,true,false,20,36.2,4130.85,194.3,1.1,51148,4033,true,ok
+E6-M72B-P2-C2,2026-04-15,M72B,Qwen2.5-72B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C2,cache+spec,vulkan+fa,6144,true,true,20,36.2,2515.32,180.3,1.6,46128,3461,true,ok
+E6-M14B-P1-C2,2026-04-15,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P1,rpg-rina,C2,cache+spec,vulkan+fa,8192,true,true,20,12.2,204.76,875.2,6.8,21084,950,true,ok
+E6-M14B-P2-C0,2026-04-15,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C0,baseline,vulkan+fa,8192,false,false,20,8.0,881.63,63.6,6.4,33211,2049,true,ok
+E6-M14B-P2-C2,2026-04-15,M14B,Qwen2.5-14B-Instruct-Q4_K_M.gguf,qwen2.5,P2,retired-fisher,C2,cache+spec,vulkan+fa,8192,true,true,20,12.1,380.03,1768.1,7.2,33985,2304,true,ok
+E6-M30A3-P1-C0,2026-04-15,M30A3,Qwen3-30B-A3B-Q4_K_M.gguf,qwen3,P1,rpg-rina,C0,baseline,vulkan+fa,8192,false,false,20,28.2,155.12,311.3,21.9,21131,1004,true,ok

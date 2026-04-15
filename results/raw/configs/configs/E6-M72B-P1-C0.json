@@ -1,0 +1,46 @@
+{
+  "case_id": "E6-M72B-P1-C0",
+  "date": "2026-04-14T22:30:23",
+  "model": {
+    "key": "M72B",
+    "file": "Qwen2.5-72B-Instruct-Q4_K_M.gguf",
+    "family": "qwen2.5",
+    "draft": "Qwen2.5-0.5B-Instruct-Q8_0.gguf",
+    "label": "Qwen2.5-72B",
+    "ngl": 20,
+    "ctx": 4096
+  },
+  "persona": {
+    "key": "P1",
+    "label": "rpg-rina",
+    "thinking": "disable"
+  },
+  "cond": {
+    "key": "C0",
+    "label": "baseline",
+    "cache_prompt": false,
+    "speculative": false
+  },
+  "context": 4096,
+  "max_tokens_per_turn": 1024,
+  "server_cmd": [
+    "C:\\llm-exp\\llama.cpp\\llama-server.exe",
+    "-m",
+    "C:\\llm-exp\\models\\Qwen2.5-72B-Instruct-Q4_K_M.gguf",
+    "-ngl",
+    "20",
+    "-c",
+    "4096",
+    "-fa",
+    "on",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8080",
+    "--threads",
+    "16",
+    "--seed",
+    "42",
+    "--no-cache-prompt"
+  ]
+}

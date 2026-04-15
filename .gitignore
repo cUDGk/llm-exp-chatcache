@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+*.bak
+results/raw/conv.csv.bak
+results/raw/conv_trials.jsonl.bak

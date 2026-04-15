@@ -1,0 +1,53 @@
+{
+  "case_id": "E6-M72B-P2-C2",
+  "date": "2026-04-15T07:53:06",
+  "model": {
+    "key": "M72B",
+    "file": "Qwen2.5-72B-Instruct-Q4_K_M.gguf",
+    "family": "qwen2.5",
+    "draft": "Qwen2.5-0.5B-Instruct-Q8_0.gguf",
+    "label": "Qwen2.5-72B",
+    "ngl": 18,
+    "ctx": 6144
+  },
+  "persona": {
+    "key": "P2",
+    "label": "retired-fisher",
+    "thinking": "allow"
+  },
+  "cond": {
+    "key": "C2",
+    "label": "cache+spec",
+    "cache_prompt": true,
+    "speculative": true
+  },
+  "context": 6144,
+  "max_tokens_per_turn": 1024,
+  "server_cmd": [
+    "C:\\llm-exp\\llama.cpp\\llama-server.exe",
+    "-m",
+    "C:\\llm-exp\\models\\Qwen2.5-72B-Instruct-Q4_K_M.gguf",
+    "-ngl",
+    "18",
+    "-c",
+    "6144",
+    "-fa",
+    "on",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8080",
+    "--threads",
+    "16",
+    "--seed",
+    "42",
+    "-md",
+    "C:\\llm-exp\\models\\Qwen2.5-0.5B-Instruct-Q8_0.gguf",
+    "-ngld",
+    "999",
+    "--draft-max",
+    "8",
+    "--draft-min",
+    "1"
+  ]
+}
