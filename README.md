@@ -130,7 +130,7 @@ results/
     prompts/             # ペルソナ system prompt と質問セット (P0/P1/P2)
     configs/configs/     # 各ランの起動コマンドと設定 JSON (54 本)
     logs/logs/           # llama-server の stdout+stderr (54 本)
-    responses/<case>/    # /v1/chat/completions の生レスポンス 20 個 × 54 ケース = 1080
+    responses/responses/<case>/    # /v1/chat/completions の生レスポンス 20 個 × 54 ケース = 1080
   summary/
     summary.md           # 集計結果
     e6_*.png             # チャート 23 枚
@@ -141,7 +141,7 @@ results/
 
 - **`conv.csv`**: 同じ `case_id` が複数行ある場合は失敗→再走の履歴。`stable=true` の行だけが最終確定値 (54 行)。
 - **`conv_trials.jsonl`**: 同様に `(case_id, turn)` の後勝ちで dedup する。`dump_transcripts.py` がそれをやっている。
-- **`responses/<case>/turn_NN.json`**: llama.cpp の `timings` フィールドに prefill/gen ms、spec decoding なら `draft_n` / `draft_n_accepted` も入る。
+- **`responses/responses/<case>/turn_NN.json`**: llama.cpp の `timings` フィールドに prefill/gen ms、spec decoding なら `draft_n` / `draft_n_accepted` も入る。
 - **`logs/logs/<case>.log`**: `using device Vulkan0 (AMD Radeon 780M Graphics)` と出ているので iGPU 推論である事が確認できる。
 
 ## 再現方法
